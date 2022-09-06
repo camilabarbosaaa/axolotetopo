@@ -1,21 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
-    <title>carrostops
-    </title>
-</head>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>shopcar</title>
+  </head>
+  <body>
+    <img class="banner border2" src="lojadecarros.jpg" alt="" />
+    <marquee class="border2" direction="right">As melhores ofertas</marquee>
 
-<body>
-    <img src="lojadecarros.jpg" alt="" id="banner">
-    <div id="conteudo">
-        <img src="antigo.jpg" alt="" class="carro">
-        <img src="caminhonete.jpg" alt="" class="carro">
-        <img src="esporte.jpg" alt="" class="carro">
+    <div class="content">
+      <img class="car border1" src="antigo.jpg" alt="" />
+      <img class="car border1" src="caminhonete.jpg" alt="" />
+      <img class="car border1" src="esporte.jpg" alt="" />
     </div>
-</body>
+    <div class="content">
+      <img src="slides/slide1.jpg" class="slide border1" alt="" />
+      <iframe
+        width="33%"
+        src="https://www.youtube.com/embed/UrNFVmjBwMs"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
 
+    <script>
+      const slide = document.querySelector(".slide");
+
+      const switchSlide = () => {
+        switch (slide.getAttribute("src")) {
+          case "slides/slide1.jpg":
+            slide.src = "slides/slide2.jpg";
+            break;
+          case "slides/slide2.jpg":
+            slide.src = "slides/slide3.jpg";
+            break;
+          case "slides/slide3.jpg":
+            slide.src = "slides/slide4.jpg";
+            break;
+          case "slides/slide4.jpg":
+            slide.src = "slides/slide1.jpg";
+            break;
+        }
+      };
+
+      setInterval(switchSlide, 3000);
+    </script>
+  </body>
 </html>
